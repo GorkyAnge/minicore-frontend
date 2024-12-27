@@ -36,16 +36,6 @@ Este es el proyecto de frontend desarrollado en Next.js para consumir la API de 
 ## Configuración
 Asegúrate de que el backend esté en funcionamiento y que la API esté disponible en `http://localhost:5000/api/gastos`. Si la URL cambia, actualiza el archivo `services/gastosService.js`.
 
-## Estructura del Proyecto
-```
-next-frontend/
-├── pages/
-│   ├── gastos.js    # Página principal de gastos
-├── services/
-│   ├── gastosService.js  # Servicio para consumir la API
-├── public/          # Archivos estáticos
-├── styles/          # Estilos globales
-```
 
 ## Scripts Disponibles
 - `npm run dev`: Ejecutar el entorno de desarrollo.
