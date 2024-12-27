@@ -48,4 +48,4 @@ Puedes personalizar los colores y el diseño editando los estilos en la carpeta 
 ---
 
 ### Autor
-Desarrollado por [Tu Nombre].
+Desarrollado por Gorky Palacios Mutis.
