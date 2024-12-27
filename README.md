@@ -1,22 +1,21 @@
-# Backend - Filtrar Gastos
+# Frontend - Filtrar Gastos
 
-Este es el proyecto de backend desarrollado en Node.js con ExpressJS para gestionar y proporcionar los datos de gastos a través de una API REST.
+Este es el proyecto de frontend desarrollado en Next.js para consumir la API de backend y mostrar los gastos filtrados por rango de fechas en una tabla interactiva.
 
 ## Características
-- API REST para filtrar los gastos por rango de fechas.
-- Conexión a una base de datos SQL Azure.
-- Estructura modular y escalable.
+- Selección de rango de fechas con un diseño moderno.
+- Tabla interactiva con formato numérico y colores atractivos.
+- Integración con una API de backend para obtener datos.
 
 ## Requisitos
 - Node.js (v16 o superior)
 - npm (v7 o superior)
-- Base de datos SQL en Azure
 
 ## Instalación
 1. Clonar este repositorio:
    ```
-   git clone <repositorio-backend-url>
-   cd express-backend
+   git clone <repositorio-frontend-url>
+   cd next-frontend
    ```
 
 2. Instalar las dependencias:
@@ -24,69 +23,37 @@ Este es el proyecto de backend desarrollado en Node.js con ExpressJS para gestio
    npm install
    ```
 
-3. Crear un archivo `.env` en la raíz del proyecto con las siguientes variables:
+3. Ejecutar el servidor de desarrollo:
    ```
-   DB_USER=<tu_usuario>
-   DB_PASSWORD=<tu_contraseña>
-   DB_SERVER=<tu_servidor>.database.windows.net
-   DB_NAME=<tu_base_de_datos>
+   npm run dev
    ```
 
-4. Iniciar el servidor:
+4. Abrir el proyecto en el navegador:
    ```
-   npm start
+   http://localhost:3000
    ```
 
-## Endpoints Disponibles
-### `GET /api/gastos`
-- **Descripción**: Filtra los gastos por rango de fechas.
-- **Parámetros**:
-  - `fechaInicio`: Fecha de inicio (YYYY-MM-DD).
-  - `fechaFin`: Fecha de fin (YYYY-MM-DD).
-- **Ejemplo**:
-  ```
-  GET http://localhost:5000/api/gastos?fechaInicio=2024-01-01&fechaFin=2024-03-31
-  ```
-- **Respuesta**:
-  ```json
-  [
-    {
-      "departamento": "Producción Musical",
-      "totalGasto": 1030000.00
-    },
-    {
-      "departamento": "Marketing y Publicidad",
-      "totalGasto": 890000.00
-    },
-    {
-      "departamento": "Giras Internacionales",
-      "totalGasto": 175000.00
-    },
-    {
-      "departamento": "Composición y Letras",
-      "totalGasto": 50000.00
-    },
-    {
-      "departamento": "Total General",
-      "totalGasto": 2145000.00
-    }
-  ]
-  ```
+## Configuración
+Asegúrate de que el backend esté en funcionamiento y que la API esté disponible en `http://localhost:5000/api/gastos`. Si la URL cambia, actualiza el archivo `services/gastosService.js`.
 
 ## Estructura del Proyecto
 ```
-express-backend/
-├── server.js          # Servidor principal
-├── .env               # Configuración de variables de entorno
-├── package.json       # Configuración del proyecto
+next-frontend/
+├── pages/
+│   ├── gastos.js    # Página principal de gastos
+├── services/
+│   ├── gastosService.js  # Servicio para consumir la API
+├── public/          # Archivos estáticos
+├── styles/          # Estilos globales
 ```
 
 ## Scripts Disponibles
-- `npm start`: Inicia el servidor en modo producción.
-- `npm run dev`: Inicia el servidor en modo desarrollo (con nodemon).
+- `npm run dev`: Ejecutar el entorno de desarrollo.
+- `npm run build`: Construir el proyecto para producción.
+- `npm start`: Iniciar el proyecto en producción.
 
-## Configuración
-Asegúrate de que la base de datos está configurada correctamente y accesible desde el servidor.
+## Personalización
+Puedes personalizar los colores y el diseño editando los estilos en la carpeta `styles`.
 
 ---
 
